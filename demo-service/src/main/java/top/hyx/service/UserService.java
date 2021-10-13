@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import top.hyx.exception.MyException;
 import top.hyx.pojo.User;
 import top.hyx.pojo.bo.UserBo;
-import top.hyx.pojo.vo.UserVO;
+import top.hyx.pojo.UserNoPassword;
 
 /**
  * @author: HanYuXing
@@ -19,5 +19,5 @@ public interface UserService extends IService<User> {
      */
     void register(UserBo userBo) throws MyException;
 
-    UserVO login(String username, String password) throws MyException;
+    UserNoPassword login(String username, String password) throws MyException;
 }

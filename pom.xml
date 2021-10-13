@@ -13,6 +13,7 @@
         <module>demo-mapper</module>
         <module>demo-pojo</module>
         <module>demo-service</module>
+        <module>demo-sso</module>
     </modules>
 
     <properties>
@@ -79,6 +80,11 @@
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.4.3.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
         <dependency>

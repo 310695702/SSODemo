@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import top.hyx.exception.MyException;
 import top.hyx.pojo.bo.UserBo;
-import top.hyx.pojo.vo.UserVO;
+import top.hyx.pojo.UserNoPassword;
 import top.hyx.service.UserService;
 
 /**
@@ -33,9 +33,9 @@ public class UserController {
 
     @PostMapping("/login")
     @ResponseBody
-    public UserVO login(String username, String password) throws MyException {
-        UserVO userVO = userService.login(username,password);
-        return userVO;
+    public UserNoPassword login(String username, String password) throws MyException {
+        UserNoPassword userNoPassword = userService.login(username,password);
+        return userNoPassword;
     }
 
 }

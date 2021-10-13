@@ -10,7 +10,7 @@ import top.hyx.exception.MyException;
 import top.hyx.mapper.UserMapper;
 import top.hyx.pojo.User;
 import top.hyx.pojo.bo.UserBo;
-import top.hyx.pojo.vo.UserVO;
+import top.hyx.pojo.UserNoPassword;
 import top.hyx.service.UserService;
 
 /**
@@ -30,8 +30,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         }
         User user = new User();
         BeanUtils.copyProperties(userBo, user);
-        user.setCreatedTime(null);
-        user.setUpdatedTime(null);
         int count = baseMapper.insert(user);
         if (count != 1) {
             throw new MyException(10001, "新增失败");
@@ -39,7 +37,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     }
 
     @Override
-    public UserVO login(String username, String password) throws MyException {
+    public UserNoPassword login(String username, String password) throws MyException {
         if (StringUtils.isEmpty(username) || StringUtils.isEmpty(password)) {
             throw new MyException(10000, "参数错误");
         }
@@ -49,8 +47,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         if (user == null) {
             throw new MyException(10002, "该用户不存在!");
         }
-        UserVO userVO = new UserVO();
-        BeanUtils.copyProperties(user, userVO);
-        return userVO;
+        UserNoPassword userNoPassword = new UserNoPassword();
+        BeanUtils.copyProperties(user, userNoPassword);
+        return userNoPassword;
     }
 }

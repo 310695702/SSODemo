@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo-sso" />
         <module name="demo-common" />
         <module name="demo-mapper" />
         <module name="demo-service" />
@@ -22,6 +23,7 @@
       <module name="demo-mapper" options="-parameters" />
       <module name="demo-pojo" options="-parameters" />
       <module name="demo-service" options="-parameters" />
+      <module name="demo-sso" options="-parameters" />
     </option>
   </component>
 </project>
